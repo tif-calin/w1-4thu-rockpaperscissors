@@ -14,16 +14,41 @@ img {
     flex-direction: row;
 }
 
-.game * {
+.game img, span {
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
+.hidden {
+    display: none !important;
+}
+
 button {
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 #game-stats {
     margin: 0;
     padding: 0;
+}
+
+#user-selects {
+    width: 1rem;
+}
+
+input {
+    display: none;
+}
+
+input:checked + img {
+    box-shadow: 2px 2px 10px 2px yellow;
+    border-radius: 100%;
+}
+
+button, input + img:hover {
+    cursor: pointer;
+}
+
+#stats-record, #stats-total {
+    margin: 0;
 }
