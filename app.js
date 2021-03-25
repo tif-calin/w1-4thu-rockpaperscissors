@@ -45,7 +45,7 @@ btnGo.addEventListener('click', () => {
     // win or lose?
     const userThrow = document.querySelector('input:checked').value;
     const result = doesUserWin(userThrow, gameState['compThrow']);
-    switch(result) {
+    switch (result) {
         case 'win':
             gameState['wins']++;
             break;
