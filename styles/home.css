@@ -48,3 +48,7 @@ input:checked + img {
 button, input + img:hover {
     cursor: pointer;
 }
+
+#stats-record, #stats-total {
+    margin: 0;
+}
