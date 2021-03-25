@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Alchemy Doc</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
@@ -21,10 +21,20 @@
     </header>
     <main>
         <section class="main-section">
-            <img class="main-logo" src="assets/alchemy-logo.png"/>
             <h2>
-                Welcome to Alchemy Bootstrap!
+                Rock, Paper, Scissors
             </h2>
+            <section class="game wrapper-h">
+                <div class="wrapper-v">
+                    <img id="rock-throw" src="assets/rock.png" alt="rock emoji">
+                    <img id="paper-throw" src="assets/paper.png" alt="paper emoji">
+                    <img id="scissors-throw" src="assets/scissors.png" alt="scissors emoji">
+                </div>
+                <span>vs.</span>
+                <img id="computer-throw" src="./assets/question-mark.png" alt="question-mark emoji">
+            </section>
+            <button id="button-go">Go!</button>
+            <button class="hidden" id="button-reset">Reset</button>
         </section>
     </main>
     <footer>
