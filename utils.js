@@ -1,5 +1,5 @@
 
-export const getComputerThrow = () => ['rock', 'paper', 'scissors'][Math.ceil(Math.random() * 3)];
+export const getComputerThrow = () => ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
 
 export const doesUserWin = (userThrow, compThrow) => {
     const results = ['win', 'draw', 'lose'];
