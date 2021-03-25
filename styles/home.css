@@ -22,3 +22,8 @@ img {
 button {
     margin: 1rem;
 }
+
+#game-stats {
+    margin: 0;
+    padding: 0;
+}
