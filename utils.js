@@ -4,15 +4,16 @@ export const getComputerThrow = () => ['rock', 'paper', 'scissors'][Math.ceil(Ma
 export const doesUserWin = (userThrow, compThrow) => {
     const results = ['win', 'draw', 'lose'];
 
+    let result = null;
     switch (userThrow) {
         case 'rock':
-            const result = ['scissors', 'rock', 'paper'].indexOf(compThrow);
+            result = ['scissors', 'rock', 'paper'].indexOf(compThrow);
             return results[result];
         case 'paper':
-            const result = ['rock', 'paper', 'scissors'].indexOf(compThrow);
+            result = ['rock', 'paper', 'scissors'].indexOf(compThrow);
             return results[result];
         default: // scissors
-            const result = ['paper', 'scissors', 'rock'].indexOf(compThrow);
+            result = ['paper', 'scissors', 'rock'].indexOf(compThrow);
             return results[result];
     }
 };
