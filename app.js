@@ -12,29 +12,36 @@ const spnRecord = document.querySelector('#stats-record');
 // initialize state
 const gameState = {
     'compThrow': getComputerThrow(),
-    'total': 1,
+    'total': 0,
     'wins': 0,
     'losses': 0,
     'draws': 0
 };
 
 // set event listeners to update state and DOM
+const showStats = () => {
+    spnTotal.textContent = gameState['total'];
+    spnRecord.textContent = `(${gameState['wins']}-${gameState['draws']}-${gameState['losses']})`;
+    sctStats.classList.remove('hidden');
+};
+
 btnReset.addEventListener('click', () => {
+    // reset gameState
+    gameState['compThrow'] = getComputerThrow();
+    gameState['total'] = 0;
+    gameState['wins'] = 0;
+    gameState['draws'] = 0;
+    gameState['losses'] = 0;
+
     // hide computer's throw 
     imgCompThrow.src = './assets/question-mark.png';
     imgCompThrow.alt = 'question-mark emoji';
 
-    // get new computer throw
-    gameState['compThrow'] = getComputerThrow();
-
     // show or hide relevent buttons
-    btnGo.disabled = false;
     btnReset.classList.add('hidden');
 
     // show stats
-    gameState['total']++;
-    spnTotal.textContent = gameState['total'];
-    sctStats.classList.remove('hidden');
+    showStats();
 });
 
 btnGo.addEventListener('click', () => {
@@ -55,9 +62,12 @@ btnGo.addEventListener('click', () => {
         default:
             gameState['draws']++;
     }
-    spnRecord.textContent = `(${gameState['wins']}-${gameState['draws']}-${gameState['losses']})`;
+    gameState['total']++;
 
     // show and disable relevent buttons
-    btnGo.disabled = true;
     btnReset.classList.remove('hidden');
+    showStats();
+
+    // new throw
+    gameState['compThrow'] = getComputerThrow();
 });
