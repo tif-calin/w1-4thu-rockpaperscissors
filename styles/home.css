@@ -52,3 +52,9 @@ button, input + img:hover {
 #stats-record, #stats-total {
     margin: 0;
 }
+
+#stats-resets {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

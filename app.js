@@ -8,10 +8,12 @@ const imgCompThrow = document.querySelector('#computer-throw');
 const sctStats = document.querySelector('#game-stats');
 const spnTotal = document.querySelector('#stats-total');
 const spnRecord = document.querySelector('#stats-record');
+const spnResets = document.querySelector('#stats-resets');
 
 // initialize state
 const gameState = {
     'compThrow': getComputerThrow(),
+    'resets': 1,
     'total': 0,
     'wins': 0,
     'losses': 0,
@@ -22,12 +24,14 @@ const gameState = {
 const showStats = () => {
     spnTotal.textContent = gameState['total'];
     spnRecord.textContent = `(${gameState['wins']}-${gameState['draws']}-${gameState['losses']})`;
+    spnResets.textContent = `Game ${gameState['resets']}`;
     sctStats.classList.remove('hidden');
 };
 
 btnReset.addEventListener('click', () => {
     // reset gameState
     gameState['compThrow'] = getComputerThrow();
+    gameState['resets']++;
     gameState['total'] = 0;
     gameState['wins'] = 0;
     gameState['draws'] = 0;
@@ -39,6 +43,7 @@ btnReset.addEventListener('click', () => {
 
     // show or hide relevent buttons
     btnReset.classList.add('hidden');
+    spnResets.classList.remove('hidden');
 
     // show stats
     showStats();
